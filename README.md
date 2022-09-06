@@ -8,6 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+If connection dummyjson.com =>  username : 'kminchelle' , password: '0lelplR';
+
 ### `npm start`
 
 Runs the app in the development mode.\
