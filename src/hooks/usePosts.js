@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../axiosInstance';
 
-const LIMIT = 10;
+const LIMIT = 5;
 
 
 export function usePosts() {
@@ -30,7 +30,7 @@ export function usePosts() {
     }
 
     function loadMore() {
-        setSkip(skip => skip + LIMIT)
+        setSkip(skip => skip + LIMIT);
     }
 
     return [total, posts, loading, error, loadMore];

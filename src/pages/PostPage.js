@@ -30,7 +30,6 @@ function PostPage() {
     async function getComments() {
         const { data } = await api.get(`/posts/${postId}/comments`)
         setComments(data.comments);
-        console.log(data.comments)
     }
 
 

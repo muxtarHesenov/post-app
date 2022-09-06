@@ -5,3 +5,6 @@ const instance = axios.create({
 });
 
 export default instance;
+
+// https://posts-api-muxtar.herokuapp.com
+// http://localhost:8080

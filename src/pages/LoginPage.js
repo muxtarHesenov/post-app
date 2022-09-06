@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import api from '../axiosInstance'
+import api from '../axiosInstance';
 import LoginForm from "../components/LoginForm";
 
 function LoginPage() {
@@ -29,7 +29,12 @@ function LoginPage() {
         <>
             <div className="container  flex-center">
                 <div className="login-margin">
+                    <div className="login-title">
+                        <h1>Login</h1>
+                    </div>
+                    <div className="login-title">
                     {error && <span className="login-error">{error}</span>}
+                    </div>
                     <LoginForm onSubmit={handleFormSubmit} loading={loading} />
                 </div>
             </div>

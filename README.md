@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+If connection dummyjson.com =>  username : 'kminchelle' , password: '0lelplR';
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -154,7 +154,11 @@ body {
 .login-error {
   font-size: large;
   color: rgb(188, 57, 57);
-  margin-left: 15%;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
 }
 
 .login-margin {
@@ -245,14 +249,57 @@ body {
 
 
 
-@media only screen and (max-width: 1000px) {
+
+
+@media only screen and (max-width: 912px) {
   .post-container {
     width: 60%;
+    margin: 10px;
   }
+
 }
+
+/* @media only screen and (max-width: 912px) {
+  .post-container {
+    width:60%;
+  }
+} */
 
 @media only screen and (max-width: 640px) {
   .post-container {
+    width: 80%;
+  }
+  .posts {
+    padding: 10px;
+    margin: 30px;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .post-container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .posts {
+    padding: 10px;
+    margin: 30px;
+  }
+  .post-container {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .posts {
+    padding: 10px;
+    margin: 10px 5px;
+  }
+
+  .tag {
+    padding: 1px;
+    margin-right: 2px;
+
   }
 }
