@@ -16,7 +16,7 @@ function RegistrationForm({ onSubmit, loading = false }) {
 
         <>
             <div className="container h-full flex-center">
-                <div className="posts">
+                <div className="posts-login">
                     <form onSubmit={handleFormSubmit} className="login-form">
                         <div className="group">
                             <label htmlFor="fullName">Full Name  </label>
@@ -35,7 +35,7 @@ function RegistrationForm({ onSubmit, loading = false }) {
                                 onChange={(e) => setUsername(e.target.value)} />
                         </div>
                         <div className="group">
-                            <label htmlFor="Password">Password  </label>
+                            <label htmlFor="password">Password  </label>
                             <input type='Password'
                                 id="Password"
                                 placeholder="Enter password..."

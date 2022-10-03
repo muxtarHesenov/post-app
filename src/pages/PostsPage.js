@@ -8,7 +8,10 @@ import ProtectedRoute from '../components/ProtectedRoute';
 
 function App() {
 
+
   const [total, posts, loading, error, loadMore] = usePosts();
+
+
 
 
   return (

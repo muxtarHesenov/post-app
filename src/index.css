@@ -41,11 +41,27 @@ body {
 .posts {
   border: 1px groove;
   padding: 20px;
+  padding-bottom: 20px;
   margin: 40px;
   border-radius: 5px;
   box-shadow: 5px 10px 10px 10px grey;
   background-color: rgba(229, 226, 226, 0.49);
   transition: 500ms;
+  min-height: 170px;
+}
+
+.posts-login {
+  border: 1px groove;
+  padding: 20px 20px 20px 0px;
+  margin: 40px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 10px 10px grey;
+  background-color: rgba(229, 226, 226, 0.49);
+  transition: 500ms;
+}
+
+.posts-login:hover {
+  box-shadow: 0px 0px 0px grey;
 }
 
 .posts:hover {
@@ -54,6 +70,7 @@ body {
 }
 
 .reactions {
+  width: 30px;
   float: right;
   cursor: pointer;
 
@@ -65,11 +82,13 @@ body {
 
 .loading,
 .error {
+
   display: block;
   font-size: 20px;
   margin: 50px;
   text-align: center;
   justify-content: center;
+
 }
 
 .load-more {
@@ -100,7 +119,7 @@ body {
 }
 
 .login-form {
-  padding: 20px;
+  padding: 20px 20px 20px 0px;
 
 }
 
@@ -156,6 +175,11 @@ body {
   color: rgb(188, 57, 57);
 }
 
+.good-register {
+  font-size: large;
+  color: green;
+}
+
 .login-title {
   display: flex;
   justify-content: center;
@@ -187,6 +211,27 @@ body {
   border: 1px solid;
 }
 
+.new-post-button:hover {
+  box-shadow: 0px 0px 0px grey;
+  border: 1px solid;
+}
+
+.new-post-button {
+  font-size: 17px;
+  padding: 5px;
+  border: rgba(153, 153, 153, 0.709);
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(153, 153, 153, 0.709);
+  margin: 10px 0px;
+  margin-left: 65%;
+  box-shadow: 10px 10px 5px grey;
+  cursor: pointer;
+  border: 1px solid rgba(192, 192, 192, 0);
+  transition: 500ms;
+  font-weight: 600;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -198,9 +243,9 @@ body {
 
 .img {
   width: 40px;
-  height: auto;
-  border-radius: 50%;
-  border: 1px solid;
+  height: 40px;
+  border-radius: 30px;
+  border: 3px solid grey;
 }
 
 .user {
@@ -225,6 +270,8 @@ body {
   border-radius: 5px;
   border: 1px solid rgba(153, 153, 153, 0.709);
   margin: 20px;
+  box-shadow: 10px 10px 5px grey;
+
 }
 
 .comment p {
@@ -235,6 +282,115 @@ body {
   font-weight: 600;
 }
 
+.hide {
+  display: none;
+}
+
+.body-input {
+  width: 100%;
+  min-height: 100px !important;
+  box-shadow: 10px 10px 5px grey;
+  margin-left: -3%;
+  transition: 500ms;
+
+}
+
+.body-input:hover {
+  box-shadow: 0 0 0 0;
+}
+
+.creat-input {
+  margin-left: -5%;
+}
+
+.creat-input-button {
+  margin-left: 1%;
+}
+
+.tag-button {
+  background-color: rgb(102, 175, 102);
+  border-radius: 5px;
+  padding: 7px;
+  margin-top: 10px;
+
+}
+
+.tag-button:hover {
+  background-color: rgb(57, 175, 57);
+}
+
+.delete {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.post-delete {
+  display: none;
+  transition: 300ms;
+}
+
+.setting {
+  list-style: none;
+  float: right;
+  margin-top: 30px;
+  background-color: rgb(174, 174, 174);
+  margin: 0;
+  padding: 5px;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.setting li:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.emptyHeart {
+  font-size: 26px;
+  color: red;
+  padding-left: 3px;
+  margin-bottom: 21px;
+  position: absolute;
+}
+
+.hearts {
+  color: red;
+  margin-top: 5px;
+  position: absolute;
+  font-size: 20px;
+}
+
+.likeCount {
+  font-size: 17px;
+  padding-top: 10px;
+  padding-left: 24px;
+  position: absolute;
+}
+
+.meta {
+  margin-top:5px;
+  margin-left: 10px;
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rebeccapurple;
+  margin: 0px;
+  object-fit: cover;
+}
+
+.post-header {
+  display: flex;
+}
+
+.post-username {
+  margin: 5px 0px 5px 10px;
+}
 
 
 
@@ -257,6 +413,10 @@ body {
     margin: 10px;
   }
 
+  .new-post-button {
+    margin-left: 50%;
+  }
+
 }
 
 /* @media only screen and (max-width: 912px) {
@@ -269,9 +429,15 @@ body {
   .post-container {
     width: 80%;
   }
+
   .posts {
     padding: 10px;
     margin: 30px;
+    padding-bottom: 20px;
+  }
+
+  .new-post-button {
+    margin-left: 22%;
   }
 }
 
@@ -279,15 +445,25 @@ body {
   .post-container {
     width: 90%;
   }
+
+  .new-post-button {
+    margin-left: 10%;
+  }
 }
 
 @media only screen and (max-width: 360px) {
   .posts {
     padding: 10px;
     margin: 30px;
+    padding-bottom: 20px;
   }
+
   .post-container {
     width: 100%;
+  }
+
+  .new-post-button {
+    margin-left: 0%;
   }
 }
 
@@ -295,11 +471,18 @@ body {
   .posts {
     padding: 10px;
     margin: 10px 5px;
+    padding-bottom: 20px;
   }
 
   .tag {
     padding: 1px;
     margin-right: 2px;
 
+  }
+
+  .new-post-button,
+  .log-out-button {
+    padding: 5px;
+    font-size: 11px;
   }
 }

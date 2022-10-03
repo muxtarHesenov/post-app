@@ -10,6 +10,11 @@ function Header() {
         localStorage.removeItem('user')
         navigate('/login')
     }
+    function handleToNewPost() {
+        navigate('/posts/new')
+        
+    }
+
 
     return (
         <header className="header">
@@ -19,6 +24,9 @@ function Header() {
                     alt="user profile image" />
                 <span>{user.username}</span>
             </div>
+            <button onClick={handleToNewPost} className="new-post-button">
+                New Post    
+            </button>
             <button onClick={handleLogOut} className="log-out-button">
                 Log Out
             </button>

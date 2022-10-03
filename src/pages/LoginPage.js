@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import jwt_decode from "jwt-decode";
 import api from '../axiosInstance';
 import LoginForm from "../components/LoginForm";
 
@@ -14,8 +15,11 @@ function LoginPage() {
         setLoading(true)
         setError('')
         try {
-            const response = await api.post('/auth/login', { username, password })
-            localStorage.setItem('user', JSON.stringify(response.data));
+            const response = await api.post('/login', { username, password })
+            const { accessToken } = response.data;
+            const decode = jwt_decode(accessToken);
+            localStorage.setItem('user', JSON.stringify(decode));
+            localStorage.setItem('access_token', accessToken);
             navigate('/posts');
         } catch (error) {
             setError('Username or Password wrong!')
@@ -33,7 +37,7 @@ function LoginPage() {
                         <h1>Login</h1>
                     </div>
                     <div className="login-title">
-                    {error && <span className="login-error">{error}</span>}
+                        {error && <span className="login-error">{error}</span>}
                     </div>
                     <LoginForm onSubmit={handleFormSubmit} loading={loading} />
                 </div>

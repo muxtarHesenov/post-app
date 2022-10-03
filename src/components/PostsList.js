@@ -1,7 +1,7 @@
 import React from "react";
 import PostsItem from "./PostItem";
 
-function PostsList({ loading, error, posts, total }) {
+function PostsList({ loading, error, posts, total,  }) {
     return (
         <>
             <div className="">

@@ -14,7 +14,7 @@ function LoginForm({ onSubmit, loading = false }) {
 
         <>
             <div className="container h-full flex-center">
-                <div className="posts">
+                <div className="posts-login">
                     <form onSubmit={handleFormSubmit} className="login-form">
                         <div className="group">
                             <label htmlFor="username">Username  </label>

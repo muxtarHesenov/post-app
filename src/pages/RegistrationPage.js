@@ -1,26 +1,28 @@
-import React, { useState } from "react";
+    import React, { useState } from "react";
+    import { useNavigate } from "react-router-dom";
 import RegistrationForm from "../components/RegistrationForm";
 import api from "../axiosInstance";
 
 
-function RegistrationPage(username, password, fullName, file) {
+function RegistrationPage() {
 
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-
+    const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
     async function handleFormSubmit({ username, password, fullName, file }) {
         try {
-            console.log(username, password, fullName)
             setLoading(true);
-            const response = await api.post(
-                '/registration',
-                username,
-                password,
-                fullName,
+            setError('')
+            await api.post(
+                '/registration', { username, password, fullName }
             );
-            console.log(response);
+            setMessage('Registration successfull Redirecting to login page');
+            setTimeout(() => {
+                navigate('/login')
+            }, 2500);
             setError('');
         } catch {
             setError('Ooops! Something went wrong!')
@@ -40,6 +42,7 @@ function RegistrationPage(username, password, fullName, file) {
                         <h1>Registration</h1>
                     </div>
                     <div className="login-title">
+                        {message && <span className="good-register">{message}</span>} 
                         {error && <span className="login-error">{error}</span>}
                     </div>
                     <RegistrationForm onSubmit={handleFormSubmit} loading={loading} />
